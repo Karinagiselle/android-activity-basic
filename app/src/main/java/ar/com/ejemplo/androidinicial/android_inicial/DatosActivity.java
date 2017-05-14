@@ -3,12 +3,12 @@ package ar.com.ejemplo.androidinicial.android_inicial;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 public class DatosActivity extends AppCompatActivity {
+
+    private final static String MENSAJE_BIENVENIDA = "Bienvenido %s, usted va a recibir toda la " +
+            "información de su equipo preferido %s";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +17,6 @@ public class DatosActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         TextView nombre = (TextView) findViewById(R.id.nombreBienvenida);
-        nombre.setText(intent.getStringExtra("nombre"));
+        nombre.setText(String.format(MENSAJE_BIENVENIDA,intent.getStringExtra("nombre"), intent.getStringExtra("equipo")));
     }
 }

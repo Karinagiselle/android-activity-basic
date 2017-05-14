@@ -19,11 +19,12 @@ public class FormActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 String nombre = ((EditText) findViewById(R.id.nombreText)).getText().toString();
-                String edad = ((EditText) findViewById(R.id.edadText)).getText().toString();
+                String equipo = ((EditText) findViewById(R.id.equipoText)).getText().toString();
 
-                if (camposCompletos(nombre, edad)) {
+                if (camposCompletos(nombre, equipo)) {
                     Intent intent = new Intent(getApplicationContext(), DatosActivity.class);
                     intent.putExtra("nombre", nombre);
+                    intent.putExtra("equipo", equipo);
                     startActivity(intent);
                 }
             }
