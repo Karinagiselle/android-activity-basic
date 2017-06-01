@@ -15,6 +15,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Buscador de películas "
+            android:textStyle="bold"
+            android:textSize="50px"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Nombre: "
             android:labelFor="@+id/peliculaText"
             android:textStyle="bold"/>

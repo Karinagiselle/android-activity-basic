@@ -6,6 +6,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.HashMap;
 
 public class DatosActivity extends AppCompatActivity {
@@ -25,18 +27,14 @@ public class DatosActivity extends AppCompatActivity {
         setContentView(R.layout.datos_activity);
 
         String pelicula = getIntent().getStringExtra("pelicula");
+        TextView estadoPelicula = (TextView) findViewById(R.id.estadoPelicula);
 
         Boolean disponibilidad = disponibilidadPeliculas.get(pelicula);
-        final TextView grupo = new TextView(DatosActivity.this);
-        grupo.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT));
-        LinearLayout mainLayout = (LinearLayout) findViewById(R.id.peliculaDisponible);
 
         if (disponibilidad != null ) {
-            grupo.setText(disponibilidad ? "Esta disponible" : "No esta disponible");
+            estadoPelicula.setText(disponibilidad ? "Película disponible" : "Película no disponible");
         } else {
-            grupo.setText("Error al cargar titulo");
+            estadoPelicula.setText("Error al cargar titulo");
         }
-        mainLayout.addView(grupo);
     }
 }
