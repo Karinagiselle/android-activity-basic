@@ -6,9 +6,9 @@
     android:layout_height="match_parent"
     tools:context="ar.com.ejemplo.androidinicial.android_inicial.FormActivity">
 
-<TextView android:id="@+id/nombreBienvenida"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="kari"
-    android:textSize="40dp"/>
+    <LinearLayout android:id="@+id/peliculaDisponible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+
 </android.support.v7.widget.LinearLayoutCompat>

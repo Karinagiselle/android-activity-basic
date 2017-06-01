@@ -13,32 +13,18 @@ public class FormActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form);
+
         Button botonSubmit = (Button) findViewById(R.id.botonSubmit);
         botonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                String nombre = ((EditText) findViewById(R.id.nombreText)).getText().toString();
-                String equipo = ((EditText) findViewById(R.id.equipoText)).getText().toString();
-
-                if (camposCompletos(nombre, equipo)) {
-                    Intent intent = new Intent(getApplicationContext(), DatosActivity.class);
-                    intent.putExtra("nombre", nombre);
-                    intent.putExtra("equipo", equipo);
-                    startActivity(intent);
-                }
+                Intent intent = new Intent(getApplicationContext(), DatosActivity.class);
+                EditText editText = (EditText) findViewById(R.id.nombrePelicula);
+                intent.putExtra("pelicula", editText.getText().toString());
+                startActivity(intent);
             }
         });
-    }
 
-    private boolean camposCompletos(String nombre, String edad) {
-
-        boolean camposCompletos = true;
-
-        if (nombre.isEmpty() || edad.isEmpty()) {
-            camposCompletos = false;
-        }
-        return camposCompletos;
     }
 
 }
