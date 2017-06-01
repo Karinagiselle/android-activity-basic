@@ -33,7 +33,7 @@ public class DatosActivity extends AppCompatActivity {
         LinearLayout mainLayout = (LinearLayout) findViewById(R.id.peliculaDisponible);
 
         if (disponibilidad != null ) {
-            grupo.setText(disponibilidad ? "Esta disponible" : "No esta disponible");
+            grupo.setText(disponibilidad ? "Película disponible" : "Película no disponible");
         } else {
             grupo.setText("Error al cargar titulo");
         }
